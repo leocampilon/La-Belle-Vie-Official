@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<title>La Belle Vie</title>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+
+<style>
+    .caixaazul {
+        background-color:midnightblue;
+        height: 60px;
+        width:100%;
+        position: fixed;
+        background: linear-gradient(rgb(58, 58, 226), rgb(4, 76, 143))
+    }
+    .logo {
+        position: absolute;
+        top: 5px; /* Alinhado ao topo */
+        left: 30px; /* Alinhado à esquerda */
+         margin: 0%;
+         width: 50px;
+         border-radius: 55%;
+         position: fixed;
+    }
+    .textologo {
+        position: absolute;
+        top: 3px;
+        left: 90px;
+        font-size: 22px;
+        font-family:'Libre Baskerville', sans-serif;
+        font-weight: 100;
+        color: rgb(255, 255, 255);
+        position: fixed;
+        
+    }
+    .html, body{
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background: linear-gradient(to bottom, #cacccd, #ffffff); /* Substitua as cores pelos seus próprios valores */
+        background-attachment: fixed; /* Isso ajuda a manter o gradiente fixo na página ao rolar */
+        margin: 0; /* Remova margens para cobrir toda a página */
+        padding: 0; /* Remova preenchimentos para cobrir toda a página */
+        font-family: Arial, sans-serif; /* Defina uma fonte apropriada para o conteúdo */
+        color: #fff; /* Defina a cor do texto para melhor contraste */
+    }
+    .botao-home {
+    display: inline-block;
+    padding: 10px 20px;
+    position: fixed;
+    top: 10px;
+    left:  490px;
+    font-family: 'Libre Baskerville', serif;
+    text-decoration: none;
+    color: #ffffff; /* Cor do texto inicial */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave de cores */
+    }
+    .botao-home:hover {
+    color: hwb(50 1% 3%); /* Nova cor do texto ao passar o mouse */
+    }
+    .botao-unidades {
+    display: inline-block;
+    padding: 9px 20px;
+    position: fixed;
+    top: 11px;
+    left:  660px;
+    text-decoration: none;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: normal;
+    color: #ffffff; /* Cor do texto inicial */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave de cores */
+    }
+    .botao-unidades:hover {
+    color: hwb(50 1% 3%); /* Nova cor do texto ao passar o mouse */
+    }
+    .botao-contato {
+    display: inline-block;
+    padding: 9px 20px;
+    position: fixed;
+    top: 11px;
+    left:  1060px;
+    text-decoration: none;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: normal;
+    color: #ffffff; /* Cor do texto inicial */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave de cores */
+    }
+    .botao-contato:hover {
+    color: hwb(50 1% 3%); /* Nova cor do texto ao passar o mouse */
+    }
+    .botao-cardapio {
+    display: inline-block;
+    padding: 9px 20px;
+    position: fixed;
+    top: 11px;
+    left:  860px;
+    text-decoration: none;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: normal;
+    color: #ffffff; /* Cor do texto inicial */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave de cores */
+    }
+    .botao-cardapio:hover {
+    color: hwb(50 1% 3%); /* Nova cor do texto ao passar o mouse */
+    }
+    .botao-home:hover,
+    .botao-unidades:hover,
+    .botao-contato:hover,
+    .botao-cardapio:hover {
+        color: #ffbb00; /* Nova cor do texto ao passar o mouse */
+        transform: scale(1.1); /* Aumenta o tamanho em 10% ao passar o mouse */
+        transition: 0.6s;
+    }
+    .quiosques {
+    position: absolute;
+    top: 110%;
+    left: 175px;
+    font-size: 16px;
+    font-family: sans-serif; /* Fonte não serifada */
+    font-weight: bold; /* Letras em negrito */
+    color: #ffffff; /* Cor azul semelhante à cor da borda */
+    border-radius: 20px; /* Borda arredondada */
+    padding: 10px;
+    background: #4285f4;
+    }
+    .local {
+    position: absolute;
+    top: 900px;    transform: translateX(-50%);
+    width: 100px; /* Define a largura desejada, por exemplo, 200px */
+    height: 100px; /* Define a mesma altura que a largura para manter as dimensões 1 por 1 */
+    background-repeat: no-repeat;
+    background-size: contain; /* Escala a imagem para caber dentro da área */
+    background-position: center; /* Centraliza a imagem */
+   }
+   .textomapa {
+    position: absolute;
+    top: 750px; 
+    left: 36%;   
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #3e3d3d;
+   }
+
+
+/*A PARTIR DAQUI SEGUE CSS DE ESTILO DE BARRA DE PESQUISA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
+.search-container {
+    border-radius: 20px;
+    background-color: #fff; /* Fundo transparente */
+    border: 2px solid #4285f4; /* Defina a borda aqui */
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 400px; /* Largura máxima para evitar que fique muito largo */
+    margin: auto; /* Centralizar horizontalmente */
+    text-align: center;
+}
+
+form {
+    display: flex;
+    align-items: center;
+}
+
+input[type="text"] {
+    flex: 1; /* Para ocupar o espaço disponível */
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    background: transparent; /* Fundo transparente */
+    color: #3e3d3d; /* Cor do texto */
+    font-size: 16px; /* Tamanho da fonte */
+}
+
+button {
+    background: #4285f4; /* Cor de fundo do botão (semelhante ao Google) */
+    color: #fff;
+    border: none;
+    border-radius: 20px; /* Borda arredondada para combinar com o input */
+    padding: 10px 20px;
+    cursor: pointer;
+    outline: none;
+    transition: 0.3s;
+    font-size: 16px; /* Tamanho da fonte */
+}
+
+button:hover {
+    background: #3578e5; /* Cor de fundo do botão quando o mouse passa por cima */
+}
+/*SESSÃO PARA SLIDES DE IMAGENS QUE FICAM PASSANDO NA TELA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+body{
+    padding: 0;
+    margin: 0;
+    height: 110vh;
+    justify-self: center;
+    align-items: center;
+}
+.section{
+    padding: 0;
+    margin: 0;
+    height: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+.slider{
+    width: 800px;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.slide{
+    width: 500%;
+    height: 500px;
+    display: flex;
+}
+.slide input{
+    display: none;
+}
+.st{
+    width: 20%;
+    transition: 2s;
+}
+.st img{
+    width: 800px;
+    height: 500px;
+}
+.nav-m{
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    justify-content: center;
+    display: flex;
+}
+.m-btn:not(:last-child){
+    margin-right: 30px;
+}
+.m-btn:hover{
+    background-color: blue;
+}
+#radio1:checked ~.first{
+    margin-left: 0;
+}
+#radio2:checked ~.first{
+    margin-left: -20%;
+}
+#radio3:checked ~.first{
+    margin-left: -40%;
+}
+#radio4:checked ~.first{
+    margin-left: -60%;
+}
+
+.nav-auto{
+    position: absolute;
+    width: 800px;
+    margin-top: 460px;
+    display: flex;
+    justify-content: center;
+}
+.nav-auto div{
+    border: 2px solid;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+}
+.nav-auto div:not(:last-child){
+    margin-right: 30px;
+    justify-content: center;
+}
+#radio1:checked ~.nav-auto .a-b1{
+    background-color: beige;
+}
+#radio2:checked ~.nav-auto .a-b2{
+    background-color: beige;
+}
+#radio3:checked ~.nav-auto .a-b3{
+    background-color: beige;
+}
+#radio4:checked ~.nav-auto .a-b4{
+    background-color: beige;
+}
+    
+</style>
+    
+</head>
+
+<body>
+    <div class="local">
+        <img src="mapa.JPG" alt="Mapa do quiosque">
+    </div>
+
+    <div class="textomapa">
+        <h1>Nossa principal localização</h1>
+    </div>
+
+    <div class="caixaazul"></div>
+    <!-- Imagem no canto superior esquerdo -->
+    <img class="logo" src="Logo Branca.PNG" alt="Logo do site">
+    <h1 class="textologo">LA BELLE VIE</h1>
+    <h1 class="quiosques">Tenha uma experiência incrível! Digite seu endereço ou cidade para encontrar quiosques e promoções na sua região.</h1>
+    <a href="file:///C:/Users/COMPAQ/OneDrive/Desktop/La%20Belle%20Vie%20Official/La%20Belle%20Vie%20Official.html" class="botao-home">HOME</a>
+    <a href="sua-landing-page2.html" class="botao-unidades">UNIDADES</a>
+    <a href="sua-landing-page3.html" class="botao-contato">CONTATO</a>
+    <a href="file:///C:/Users/COMPAQ/OneDrive/Desktop/La%20Belle%20Vie%20Official/Cardapio.html" class="botao-cardapio">CARDAPIO</a>
+    <section class="section">
+        <div class="slider">
+            <div class="slide">
+                <input type="radio" name="radio-btn" id="radio1">
+                <input type="radio" name="radio-btn" id="radio2">
+                <input type="radio" name="radio-btn" id="radio3">
+                <input type="radio" name="radio-btn" id="radio4">
+    
+                <div class="st first">
+                    <img src="apresentação1.jpg" alt="">
+                </div>
+    
+                <div class="st">
+                    <img src="apresentação2.jpg" alt="">
+                </div>
+                
+                <div class="st">
+                    <img src="apresentação3.jpg" alt="">
+                </div>
+    
+                <div class="st">
+                    <img src="apresentação4.jpg" alt="">
+                </div>
+    
+                <div class="nav-auto">
+                    <div class="a-b1"></div>
+                    <div class="a-b2"></div>
+                    <div class="a-b3"></div>
+                    <div class="a-b4"></div>
+                </div>
+            </div>
+    
+            <div class="nav m">
+                <label for="radio1" class="m-btn"></label>
+                <label for="radio2" class="m-btn"></label>
+                <label for="radio3" class="m-btn"></label>
+                <label for="radio4" class="m-btn"></label>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript">
+        var counter = 1;
+        setInterval(function() {
+            document.getElementById('radio' + counter).checked = true;
+            counter++;
+            if (counter > 4) {
+                counter = 1;
+            }
+        }, 5000); // 5000 milissegundos (3 segundos) é o intervalo entre as mudanças
+    </script>
+   
+   <!-- CODIGO DA BARRA DE PESQUISA CENTRALIZADA NO MEIO DA TELA !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+
+    <div class="search-container">
+        <form action="/pesquisa" method="get">
+            <input type="text" name="q" placeholder="Encontre um quiosque">
+            <button type="submit">Pesquisar</button>
+        </form>
+    </div>
+    
+
+    <script>
+        // Centralize a barra de pesquisa no meio da tela
+        const searchContainer = document.querySelector('.search-container');
+        searchContainer.style.position = 'absolute';
+        searchContainer.style.top = '105%';
+        searchContainer.style.left = '50%';
+        searchContainer.style.transform = 'translate(-50%, -50%)';
+    </script>
+
+</body>
+
+</html>
